@@ -11,6 +11,9 @@
 		1292e1d419c1cd74e94bbfe8baa60731 /* Distance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65f74adf5a3d2e03d25a7621ae46297c /* Distance.cpp */; };
 		1711A1141708AB7200B2E3CE /* Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1711A1101708AB7200B2E3CE /* Car.cpp */; };
 		1711A1151708AB7200B2E3CE /* CarAccumulator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1711A1121708AB7200B2E3CE /* CarAccumulator.cpp */; };
+		17FA3FDE170A832100373FBC /* FlowField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17FA3FD8170A832100373FBC /* FlowField.cpp */; };
+		17FA3FDF170A832100373FBC /* ParkedCar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17FA3FDA170A832100373FBC /* ParkedCar.cpp */; };
+		17FA3FE0170A832100373FBC /* Path.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 17FA3FDC170A832100373FBC /* Path.cpp */; };
 		28189db43cd152201712e778f87a9075 /* ofxCvHaarFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = b12400edb0ee58ffa423ee0e45f4e5b0 /* ofxCvHaarFinder.cpp */; };
 		3ea704fe7ea39369a669859f7ce71c4c /* RunningBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3f55927604273b50cc60348dd77b4115 /* RunningBackground.cpp */; };
 		40e7cec62e17a8f6e6a443aecbda67e4 /* ofxCvGrayscaleImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6adc1729a74fa3c4546c81683c1d69bc /* ofxCvGrayscaleImage.cpp */; };
@@ -93,6 +96,12 @@
 		1711A1121708AB7200B2E3CE /* CarAccumulator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CarAccumulator.cpp; sourceTree = "<group>"; };
 		1711A1131708AB7200B2E3CE /* CarAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarAccumulator.h; sourceTree = "<group>"; };
 		17964cee60e51dcfa80fe3ffb4034f59 /* calib3d.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = calib3d.hpp; path = ../../addons/ofxOpenCv/libs/opencv/include/opencv2/calib3d/calib3d.hpp; sourceTree = SOURCE_ROOT; };
+		17FA3FD8170A832100373FBC /* FlowField.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FlowField.cpp; sourceTree = "<group>"; };
+		17FA3FD9170A832100373FBC /* FlowField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowField.h; sourceTree = "<group>"; };
+		17FA3FDA170A832100373FBC /* ParkedCar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ParkedCar.cpp; sourceTree = "<group>"; };
+		17FA3FDB170A832100373FBC /* ParkedCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkedCar.h; sourceTree = "<group>"; };
+		17FA3FDC170A832100373FBC /* Path.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Path.cpp; sourceTree = "<group>"; };
+		17FA3FDD170A832100373FBC /* Path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
 		189c2c29eb8896d8476ca771b7560bed /* index_testing.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = index_testing.h; path = ../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/index_testing.h; sourceTree = SOURCE_ROOT; };
 		1a5bd1a56e2b04bd6c212a632de10faf /* dynamic_bitset.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = dynamic_bitset.h; path = ../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/dynamic_bitset.h; sourceTree = SOURCE_ROOT; };
 		1da21a3e0c1f72c0293c8a15fa81027a /* Calibration.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = Calibration.h; path = ../../addons/ofxCv/libs/ofxCv/include/ofxCv/Calibration.h; sourceTree = SOURCE_ROOT; };
@@ -556,6 +565,12 @@
 				1711A1121708AB7200B2E3CE /* CarAccumulator.cpp */,
 				1711A1131708AB7200B2E3CE /* CarAccumulator.h */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
+				17FA3FD8170A832100373FBC /* FlowField.cpp */,
+				17FA3FD9170A832100373FBC /* FlowField.h */,
+				17FA3FDA170A832100373FBC /* ParkedCar.cpp */,
+				17FA3FDB170A832100373FBC /* ParkedCar.h */,
+				17FA3FDC170A832100373FBC /* Path.cpp */,
+				17FA3FDD170A832100373FBC /* Path.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
 			);
@@ -784,6 +799,9 @@
 				10939a98dd9b18caabf72991f8ffed66 /* Wrappers.cpp in Sources */,
 				1711A1141708AB7200B2E3CE /* Car.cpp in Sources */,
 				1711A1151708AB7200B2E3CE /* CarAccumulator.cpp in Sources */,
+				17FA3FDE170A832100373FBC /* FlowField.cpp in Sources */,
+				17FA3FDF170A832100373FBC /* ParkedCar.cpp in Sources */,
+				17FA3FE0170A832100373FBC /* Path.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

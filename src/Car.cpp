@@ -13,12 +13,19 @@ using namespace ofxCv;
 const float dyingTime = 1;
 
 void Car::setup(const cv::Rect& track) {
+
+   // cv::Rect test =     cv::Rect(track);
 	color.setHsb(ofRandom(0, 255), 255, 255);
 	cur = toOf(track).getCenter();
 	smooth = cur;
+    boundingBox = cv::Rect(track.x,track.y,track.width,track.height);
 }
 
 void Car::update(const cv::Rect& track) {
+    boundingBox.x = track.x;
+    boundingBox.y = track.y;
+    boundingBox.width = track.width;
+    boundingBox.height = track.height;
 	cur = toOf(track).getCenter();
 	smooth.interpolate(cur, .5);
 	all.addVertex(smooth);
@@ -33,7 +40,6 @@ void Car::kill() {
 	}
 }
 
-
 void Car::draw() {
 	ofPushStyle();
 	float size = 16;
@@ -44,10 +50,13 @@ void Car::draw() {
 	}
 	ofNoFill();
 	//ofCircle(cur, size);
-	ofSetColor(color);
+//	ofSetColor(color);
+//    ofCircle(boundingBox.x, boundingBox.y, 10);
 	all.draw();
 	ofSetColor(255);
 	ofDrawBitmapString(ofToString(label), cur);
+
+
 	ofPopStyle();
 }
 
