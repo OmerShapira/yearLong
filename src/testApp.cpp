@@ -21,7 +21,6 @@ void testApp::setup() {
     
     background.setDifferenceMode(RunningBackground::ABSDIFF);
     background.setLearningTime(15);
-//    background.setLearningRate(.001);
 	background.setThresholdValue(20);
     
 	contourFinder.setMinAreaRadius(15);
@@ -87,9 +86,8 @@ void testApp::update() {
 void testApp::draw() {	
 	ofSetColor(255);
     movie.draw(0,0);
-	//thresholded.draw(640, 0);
-	contourFinder.draw();
-    //p.display();
+//	contourFinder.draw();
+    p.display();
 	vector<Car>& followers = tracker.getFollowers();
 
    
