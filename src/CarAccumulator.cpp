@@ -14,7 +14,7 @@ float const angleThreshold = 30.0;
 
 //TODO finish with fitline();
 
-bool CarAccumulator::isInBounds(cv::Rect rect , float epsilon, int tries){
+bool CarAccumulator::isInBounds(cv::Rect  rect , float epsilon, int tries){
     //safety
     tries = (tries < 2)? 2 : tries;
     //inputArray for OpenCV
@@ -25,16 +25,18 @@ bool CarAccumulator::isInBounds(cv::Rect rect , float epsilon, int tries){
     float resolution = 1.0/tt;
     float xRes = rect.width/tries;
     float yRes = rect.height/tries;
-    for (int i = 0 ; i < tries - 1 ; i++){
-        for (int j = 0 ; j < tries - 1 ; j++) {
-            // OpenCV rects x and y are top left corners
-            // doc: http://opencv.willowgarage.com/documentation/cpp/basic_structures.html
-            // we sample the middle, not the corner.
-            cv::Point2f pt = cv::Point2f(i*xRes+xRes/2.0, j*yRes+yRes/2.0);
-            computedArea += resolution * cv::pointPolygonTest(vec, pt, false);
-        }
-    }
-    return (computedArea >= 1-epsilon);
+    for (int i = 0 ; i < tries ; i++){
+       for (int j = 0 ; j < tries ; j++) {
+           // OpenCV rects x and y are top left corners
+           // doc: http://opencv.willowgarage.com/documentation/cpp/basic_structures.html
+           // we sample the middle, not the corner.
+           ofPoint pt = ofPoint(rect.x + i*xRes+xRes/2.0, rect.y+ j*yRes+yRes/2.0);
+           computedArea += resolution * (bounds.inside(pt)? 1.0 : 0.0);
+           
+       }
+   }
+   // cout << computedArea << " , " << (computedArea >= (1-epsilon))<<endl;
+    return (computedArea >= (1-epsilon));
 }
 
 void CarAccumulator::setUpVector (ofVec2f vec){
@@ -43,6 +45,7 @@ void CarAccumulator::setUpVector (ofVec2f vec){
 
 void CarAccumulator::setBounds(ofPolyline newBounds){
     bounds = newBounds;
+    bounds.setClosed(true);
 }
 
 bool CarAccumulator::isWithinAngle(Car& car){

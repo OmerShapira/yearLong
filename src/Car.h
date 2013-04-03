@@ -21,6 +21,7 @@ protected:
 	ofVec2f cur, smooth;
 	float startedDying;
 	ofPolyline all;
+
 public:
 	Car()
 :startedDying(0) {
@@ -30,7 +31,10 @@ public:
 	void kill();
 	void draw();
     int getLifeTime();
-ofVec2f getTangentAtPoint(int history);
+    cv::Rect getBoundingBox();
+    ofVec2f getTangentAtPoint(int history);
+    
+    cv::Rect  boundingBox;
 
 };
 #endif /* defined(__ofApp__Car__) */
