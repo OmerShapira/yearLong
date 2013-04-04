@@ -6,6 +6,7 @@
 #include "Car.h"
 #include "ParkedCar.h"
 #include "Path.h"
+#include <deque>
 //#include "ofxAutoControlPanel.h"
 
 
@@ -15,7 +16,7 @@ public:
 	void update();
 	void draw();
     void mousePressed(int x, int y, int button);
-	
+	void keyPressed(int key);
 	ofVideoPlayer movie;
 	ofxCv::ContourFinder contourFinder;
 	ofxCv::RectTrackerFollower<Car> tracker;
@@ -29,8 +30,11 @@ public:
 
     ofImage img;
     vector<ParkedCar> parked;
-
+    vector<ParkedCar> parked1;
+    deque<Car> test;
     Path p;
-    
+    Path p1;
+     
+    Boolean pathEnabled;
    // ofxAutoControlPanel panel;
 };

@@ -15,11 +15,8 @@
 #include "Car.h"
 
 using namespace cv;
-
-#endif /* defined(__ofApp__Accumulator__) */
-
 class CarAccumulator {
-
+    
 public:
     ofVec2f upVector;
     ofPolyline bounds;
@@ -28,10 +25,12 @@ public:
     
     void setUpVector (ofVec2f vec);
     
-    //tests if 1-epsilon points of a section sample fit within the accumulator.  
+    //tests if 1-epsilon points of a section sample fit within the accumulator.
     bool isInBounds(cv::Rect rect , float epsilon, int tries);
-
+    
     bool isWithinAngle(Car& car);
-
-
+    
+    float getAngle(Car& car);
 };
+#endif /* defined(__ofApp__Accumulator__) */
+

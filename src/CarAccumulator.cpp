@@ -53,3 +53,8 @@ bool CarAccumulator::isWithinAngle(Car& car){
     //TODO instead of using "angle" use a direct product - the vector may be up or down, but we care about the projection between them, not an actual angle
     return abs(car.getTangentAtPoint(5).angle(upVector))<angleThreshold;
 }
+
+float CarAccumulator::getAngle(Car& car){
+    //TODO change to #HISTORY
+    return upVector.angle(car.getTangentAtPoint(5));
+}

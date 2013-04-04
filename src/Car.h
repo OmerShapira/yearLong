@@ -31,6 +31,15 @@ public:
 	void kill();
 	void draw();
     int getLifeTime();
+    ofVec2f getVelocity(){
+        if (all.size() < 2 ){
+            //safety
+            return ofVec2f();
+        } else {
+            return (all[all.size()-1] - all[all.size()-2]);
+        }
+    }
+
     cv::Rect getBoundingBox();
     ofVec2f getTangentAtPoint(int history);
     

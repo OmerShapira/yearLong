@@ -20,8 +20,10 @@ public:
     ofVec2f start;
     ofVec2f end;
     float radius;
+    vector<ofVec2f> points;
     
     void display();
+    void addPoint(float x, float y);
     
 };
 #endif /* defined(__yearLong__Path__) */

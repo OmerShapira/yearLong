@@ -32,12 +32,13 @@ void Car::update(const cv::Rect& track) {
 }
 
 void Car::kill() {
-	float curTime = ofGetElapsedTimef();
-	if(startedDying == 0) {
-		startedDying = curTime;
-	} else if(curTime - startedDying > dyingTime) {
-		dead = true;
-	}
+//	float curTime = ofGetElapsedTimef();
+//	if(startedDying == 0) {
+//		startedDying = curTime;
+//	} else if(curTime - startedDying > dyingTime) {
+//		dead = true;
+//	}
+    dead = true;
 }
 
 void Car::draw() {
@@ -86,6 +87,6 @@ ofVec2f Car::getTangentAtPoint(int history){
     
     cv::Vec4f line;
     cv::fitLine(points, line, CV_DIST_L2, 0, .01, .01);
-    ofVec2f tangent(line[2],line[3]);
+    ofVec2f tangent(line[0],line[1]);
     return tangent;
 }
